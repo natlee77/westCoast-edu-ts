@@ -1,0 +1,244 @@
+{
+  "courses": [
+    {
+      "title": "IT Support",
+      "number": "0987",
+      "days": 90,
+      "price": 17500,
+      "type": "distance",
+      "imageUrl": "ai.jpg",
+      "rating": 4.8,
+      "description": "test",
+      "users": [
+        {
+          "id": 1,
+          "firstName": "Merry",
+          "lastName": "Popins",
+          "telephone": "+4612345678",
+          "street": "Huvudgatan 1",
+          "postIndex": 12345,
+          "city": "Degerfors",
+          "email": "info@info.com",
+          "password": "123456"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "number": "0876",
+      "title": "Python",
+      "days": 110,
+      "type": "distance",
+      "imageUrl": "pythonSymbol.png",
+      "price": 13500,
+      "rating": 4.8,
+      "start": "2024-02-02",
+      "isAktive": false,
+      "description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam commodo venenatis rhoncus. VivamusvehicleId lacusvehicleId elit tristique vulputate.",
+      "users": [
+        {
+          "firstName": "Nataliya",
+          "lastName": "Lisjö",
+          "street": "Bredablicksgatan 10 a",
+          "postIndex": "69335",
+          "city": "Degerfors",
+          "telephone": "0735651034",
+          "email": "natlisjo@gmail.com",
+          "password": "admin",
+          "id": 2
+        },
+        {
+          "id": 1,
+          "firstName": "Merry",
+          "lastName": "Popins",
+          "telephone": "+4612345678",
+          "street": "Huvudgatan 1",
+          "postIndex": 12345,
+          "city": "Degerfors",
+          "email": "info@info.com",
+          "password": "123456"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "number": "5231",
+      "title": "Cybersecurity",
+      "days": 140,
+      "type": "distance",
+      "imageUrl": "cibersec.jpg",
+      "price": 17500,
+      "rating": 4.7,
+      "start": "2024-22-01",
+      "isAktive": false,
+      "description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam commodo venenatis rhoncus. VivamusvehicleId lacusvehicleId elit tristique vulputate. ",
+      "users": [
+        {
+          "firstName": "Nataliya",
+          "lastName": "Lisjö",
+          "street": "Bredablicksgatan 10 a",
+          "postIndex": "69335",
+          "city": "Degerfors",
+          "telephone": "0735651034",
+          "email": "natlisjo@gmail.com",
+          "password": "admin",
+          "id": 2
+        },
+        {
+          "id": 1,
+          "firstName": "Merry",
+          "lastName": "Popins",
+          "telephone": "+4612345678",
+          "street": "Huvudgatan 1",
+          "postIndex": 12345,
+          "city": "Degerfors",
+          "email": "info@info.com",
+          "password": "123456"
+        }
+      ],
+      "id": 3
+    },
+    {
+      "number": "1231",
+      "title": "IT kommunication",
+      "days": 90,
+      "type": "classroom",
+      "imageUrl": "digital.jpg",
+      "price": 17500,
+      "rating": 4.2,
+      "start": "2024-22-01",
+      "isAktive": false,
+      "description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam commodo venenatis rhoncus. VivamusvehicleId lacusvehicleId elit tristique vulputate. ",
+      "users": [
+        {
+          "firstName": "Nataliya",
+          "lastName": "Lisjö",
+          "street": "Bredablicksgatan 10 a",
+          "postIndex": "69335",
+          "city": "Degerfors",
+          "telephone": "0735651034",
+          "email": "natlisjo@gmail.com",
+          "password": "admin",
+          "id": 2
+        }
+      ],
+      "id": 4
+    },
+    {
+      "number": "1676",
+      "title": "JavaScript Course 2024: From Zero  !",
+      "days": 120,
+      "type": "distance",
+      "imageUrl": "js.png",
+      "price": 19500,
+      "rating": 4.8,
+      "start": "2024-22-01",
+      "isAktive": false,
+      "description": "The modern JavaScript course for everyone! Master JavaScript with projects, challenges and theory. Many courses in one!",
+      "users": [],
+      "id": 5
+    },
+    {
+      "number": "1886",
+      "title": "JavaScript Course 2024: Edvanced",
+      "days": 120,
+      "type": "classroom",
+      "imageUrl": "jsPlus.jpg",
+      "price": 19500,
+      "rating": 4.8,
+      "start": "2024-22-01",
+      "isAktive": false,
+      "description": "The modern JavaScript  course for everyone! Master JavaScript with projects, challenges and theory. Many courses in one!",
+      "users": [],
+      "id": 6
+    },
+    {
+      "title": "test",
+      "number": "1234",
+      "days": "333",
+      "price": "17500",
+      "type": "distance",
+      "imageUrl": "no-bild.jpg",
+      "description": "test",
+      "users": [],
+      "id": 7
+    },
+    {
+      "id": 9,
+      "title": "ttttt",
+      "number": "54465",
+      "days": "90",
+      "price": "",
+      "type": "classroom",
+      "imageUrl": "no-bild.jpg",
+      "description": "trytrfsysr",
+      "users": []
+    },
+    {
+      "title": "test versioner",
+      "number": "123456",
+      "days": "88",
+      "price": "11 111",
+      "type": "classroom",
+      "imageUrl": "no-bild.jpg",
+      "description": "mmmmmmm",
+      "id": 10
+    },
+    {
+      "title": "tttttttttt",
+      "number": "JGH",
+      "days": "5",
+      "price": "1233",
+      "type": "distance",
+      "imageUrl": "no-bild.jpg",
+      "description": "gfhfh",
+      "id": 11
+    }
+  ],
+  "users": [
+    {
+      "firstName": "Merry",
+      "lastName": "Popins",
+      "telephone": "+4612345678",
+      "street": "Huvudgatan 1",
+      "postIndex": 12345,
+      "city": "Degerfors",
+      "email": "info@info.com",
+      "password": "123456",
+      "id": 1
+    },
+    {
+      "firstName": "Nataliya",
+      "lastName": "Lisjö",
+      "street": "Bredablicksgatan 10 a",
+      "postIndex": "69335",
+      "city": "Degerfors",
+      "telephone": "0735651034",
+      "email": "natlisjo@gmail.com",
+      "password": "admin",
+      "id": 2
+    },
+    {
+      "firstName": "Maxim",
+      "lastName": "Pupkin",
+      "street": "Bredablicksgatan 10 a",
+      "postIndex": "69335",
+      "city": "Degerfors",
+      "telephone": "0730000000",
+      "email": "maxl@gmail.com",
+      "password": "123456",
+      "id": 3
+    },
+    {
+      "firstName": "Teo",
+      "lastName": "Matrix",
+      "street": "Kosmos 22",
+      "postIndex": "11111",
+      "city": "London",
+      "telephone": "000000000000",
+      "email": "teo@gmail.com",
+      "password": "11111",
+      "id": 4
+    }
+  ]
+}

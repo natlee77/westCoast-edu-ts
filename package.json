@@ -1,0 +1,18 @@
+{
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  },
+  "name": "src",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx tsc --watch"
+  },
+  "keywords": [],
+  "author": "Nataliya Lisjö",
+  "license": "ISC",
+  "description": "Öppna upp   \"Terminal\" fönstret i VSCode och skriv in följande kommando: #### typescript  `npm install typescript -D` `npx tsc --init` `npm run dev` ####  json-server.   `npm install`    `json-server --watch  db.json`",
+  "dependencies": {
+    "json-server": "^0.17.4"
+  }
+}
