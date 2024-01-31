@@ -12,10 +12,10 @@
     <script
       src="https://kit.fontawesome.com/55174c58a9.js"
       crossorigin="anonymous"></script>
-    <script
+     <script
       type="module"
-      src="../dist/dom/admin-list.js"></script> 
-    <title>Administration</title> 
+      src="/dist/dom/users-dom.js"></script>  
+    <title>Administration</title>
   </head>
   <body class="grid-container">
     <header>
@@ -25,7 +25,7 @@
             <li class="logo">
               <a
                 class="logo-title"
-                href="./index.html"
+                href="../index.html"
                 ><span><i class="fa-solid fa-building-columns"></i></span> Westcoast Education</a
               >
             </li>
@@ -40,17 +40,18 @@
                 ><span class="nav-icon"></span>
               </label>
             </li>
-
             <li class="menu-item">
-              <a
-                class="active"
-                href="./pages/admin/admin.html">Courses</a></li>
+                <a
+                  
+                  href="../admin.html">Courses</a></li>
+            
             <li class="menu-item">
-              <a href="./pages/admin/add-course.html">Add course</a>
+              <a href="../pages/add-course.html">Add course</a>
             </li>
             <li class="menu-item">
-              <a                
-                href="./pages/admin/listUser.html">Users</a></li>
+                <a
+                  class="active"
+                  href="../pages/listUser.html">Users</a></li>
           </ul>
         </div>
       </nav>
@@ -58,8 +59,8 @@
     <main>
       <div class="container">
         <h1 class="page-title">Administration</h1>
-        <h2 class="page-sub-title">Actual courses</h2>
-        <section id="courses-list"></section>
+        <h2 class="page-sub-title">Actual users</h2>
+        <section id="users-list"></section>
       </div>
     </main>
   </body>

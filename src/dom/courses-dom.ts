@@ -1,25 +1,18 @@
  
 // import { ResponseModel } from '../models/ResponseModel.js';
 import { Course, CourseType } from '../models/CourseType.js';
-import { listAllCourses } from '../services/courses.js';
-import { createCard } from '../forms/html-courses.js';
+import { listAllCourses, addImageClickHandler } from '../services/courses.js';
+import { createCard  } from '../forms/html-courses.js';
 
   
 const gallery = document.querySelector('#courses-gallery') as HTMLDivElement ;
 
-async function initPage() {
- 
-     const courses = await 
-    listCourses();   
-    console.log('courses', courses);
-    // courses.forEach((course) => {
-    //   gallery.appendChild(createCard(course));
-    // });
-
+async function initPage() { 
+    listCourses(); 
   // Hämta in alla bilder 
     const images = document.querySelectorAll('.course-image img');
   // knyt en klick händelse till varje bild..
-  // addImageClickHandler(images);//from dom.js
+    addImageClickHandler(images ); 
 }
 async function listCourses( ) {
 
@@ -31,9 +24,7 @@ console.log('list', res  );
 function displayCourses(courses:[Course ] )  {   
  gallery.innerHTML="";
  for (let kurs of courses) {
-   gallery.appendChild(createCard(kurs ));
-  console.log('c', kurs);
-  
+   gallery.appendChild(createCard(kurs ));  
  }
   }    
 document.addEventListener('DOMContentLoaded', initPage);

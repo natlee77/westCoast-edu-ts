@@ -1,6 +1,3 @@
-/************************************
-  DOM Manipulering
-  **********************************/
 //Card for gallery display
 export const createCard = (course) => {
     const div = document.createElement('div');
@@ -17,10 +14,31 @@ const createCourseCard = (course) => {
     div.appendChild(createCourseInfo(course));
     return div;
 };
+// courses list desing in administration
+const createCoursesList = (courses, element) => {
+    courses.forEach(course => {
+        const container = createDiv();
+        // container.setAttribute('kursId',course.id);
+        container.appendChild(createSpan(course.title));
+        container.appendChild(createSpan(course.type));
+        container.appendChild(createSpan(`Start: ${course.start}`));
+        container.appendChild(createSpan(`Lenght: ${course.days} dags `));
+        element.appendChild(container);
+    });
+};
+export const createDiv = () => {
+    return document.createElement('div');
+    ;
+};
+export const createSpan = (text) => {
+    const span = document.createElement('span');
+    span.innerText = text;
+    return span;
+};
 const createImage = (imageUrl, id) => {
     const image = document.createElement('img');
     image.setAttribute('src', `./assets/images/${imageUrl}`);
-    image.setAttribute('id', id);
+    image.setAttribute('id', id.toString());
     return image;
 };
 const createCourseInfo = (course) => {
@@ -28,52 +46,6 @@ const createCourseInfo = (course) => {
     paragraph.appendChild(document.createTextNode(`${course.title} - ${course.type} - start ${course.start}`));
     return paragraph;
 };
-// courses list desing in administration
-// const createCoursesList = (courses:[Course] ,element:any) => {
-//   courses.forEach(course=>{     
-//     const container= createDiv();
-//     container.setAttribute('kursId',course.id);
-//     container.appendChild(createSpan(course.title));
-//     container.appendChild(createSpan(course.type));
-//     container.appendChild(createSpan(`Start: ${course.start}`));
-//     container.appendChild(createSpan(`Lenght: ${course.days} dags `));
-//     element.appendChild(container); 
-//     });  
-// };
-export const createUsersList = (users, element) => {
-    users.forEach(user => {
-        const container = createDiv();
-        // container.setAttribute('userId',user.id);
-        container.appendChild(createSpan(`Student :  ${user.firstName} ${user.lastName} *`));
-        container.appendChild(createSpan(user.email));
-        container.appendChild(createSpan(` * tel:  ${user.telephone} `));
-        // container.appendChild(createSpan(` Adress: ${user.street} ${user.city} ${user.postIndex} -- `)); 
-        //  container.appendChild(createSpan(`-- bokad kurs: ${user.order[0].title   }   `));
-        // console.log(user.order[0].title  );
-        element.appendChild(container);
-    });
-};
-const createDiv = () => {
-    return document.createElement('div');
-    ;
-};
-const createSpan = (text) => {
-    const span = document.createElement('span');
-    span.innerText = text;
-    return span;
-};
-//event on image click
-// const addImageClickHandler = (images:[string]) => {
-//   images.forEach((image ) => {
-//     const src = image.getAttribute('src');
-//     const courseId = image.getAttribute('id');
-//     image.addEventListener('click', () => {         
-//       //  console.log(location);// click =>  href:"/pages/gallery.html"
-//        //query string
-//         location.href = `/pages/course-details.html?id=${courseId}`;
-//     });
-//   });
-// };
 export const createCourseDetails = (course) => {
     const details = document.createElement('div');
     details.innerHTML = `
@@ -119,5 +91,3 @@ export const createCourseDetails = (course) => {
     `;
     return details;
 };
-// Exportera createCard och addImageClickHandler
-// namngiven export

@@ -7,15 +7,15 @@
       content="width=device-width, initial-scale=1.0" />     
     <link
       rel="stylesheet"
-      href="../assets/css/index.css" />
+      href="./assets/css/index.css" />
     
     <script
       src="https://kit.fontawesome.com/55174c58a9.js"
       crossorigin="anonymous"></script>
-    <script
+    <!-- <script
       type="module"
-      src="../dist/dom/users.js"></script>
-    <title>Administration</title>
+      src="../dist/dom/admin-list.js"></script>  -->
+    <title>Administration</title> 
   </head>
   <body class="grid-container">
     <header>
@@ -25,7 +25,7 @@
             <li class="logo">
               <a
                 class="logo-title"
-                href="/index.html"
+                href="./index.html"
                 ><span><i class="fa-solid fa-building-columns"></i></span> Westcoast Education</a
               >
             </li>
@@ -40,18 +40,17 @@
                 ><span class="nav-icon"></span>
               </label>
             </li>
+
             <li class="menu-item">
-                <a
-                  
-                  href="/pages/admin/admin.html">Courses</a></li>
-            
+              <a
+                class="active"
+                href="./admin.html">Courses</a></li>
             <li class="menu-item">
-              <a href="/pages/admin/add-course.html">Add course</a>
+              <a href="./pages/add-course.html">Add course</a>
             </li>
             <li class="menu-item">
-                <a
-                  class="active"
-                  href="/pages/admin/listUser.html">Users</a></li>
+              <a                
+                href="./pages/listUser.html">Users</a></li>
           </ul>
         </div>
       </nav>
@@ -59,8 +58,8 @@
     <main>
       <div class="container">
         <h1 class="page-title">Administration</h1>
-        <h2 class="page-sub-title">Actual users</h2>
-        <section id="users-list"></section>
+        <h2 class="page-sub-title">Actual courses</h2>
+        <section id="courses-list"></section>
       </div>
     </main>
   </body>
