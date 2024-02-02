@@ -1,4 +1,4 @@
-import { Course } from "../models/CourseType";
+import { Course, CourseUser } from "../models/CourseType.js";
 
 
 //Card for gallery display
@@ -22,16 +22,17 @@ const createCourseCard = (course:Course) => {
 };
 
 // courses list desing in administration
-  const createCoursesList = (courses:[Course] ,element:any) => {
-  courses.forEach(course=>{     
+export  const createCoursesList = (course: Course   ) => {
+   
     const container= createDiv();
     // container.setAttribute('kursId',course.id);
-    container.appendChild(createSpan(course.title));
-    container.appendChild(createSpan(course.type));
-    container.appendChild(createSpan(`Start: ${course.start}`));
-    container.appendChild(createSpan(`Lenght: ${course.days} dags `));
-    element.appendChild(container); 
-    });  
+    container.appendChild(createSpan(course.title,'title'));
+    
+     container.appendChild(createSpan(course.type,'type'));
+      container.appendChild(createSpan(`Start: ${course.start}`,'start'));
+     container.appendChild(createSpan(`Lenght: ${course.days} days `, 'days'));
+    return container;
+    
 };
 
 
@@ -39,9 +40,10 @@ const createCourseCard = (course:Course) => {
 export const createDiv=( )=>{   
   return document.createElement('div');;
 };
-export const createSpan = (text:string) => {
+export const createSpan = (text:string,   cl:string) => {
   const span = document.createElement('span');
   span.innerText = text;
+  span.classList.add(cl ) ;
   return span;
 }
 const createImage = (imageUrl:string, id: number  ) => {
@@ -64,7 +66,7 @@ const createCourseInfo = (course:Course) => {
  
 
 
-export const createCourseDetails = (course:Course) => {
+export const createCourseDetails = (course:CourseUser) => {
   const details = document.createElement('div');
   
   details.innerHTML = `
@@ -104,7 +106,7 @@ export const createCourseDetails = (course:Course) => {
          </div>
           
          </form>
-        <p> Student ordered this course: ${course.users[0].firstName } ${course.users[0].lastName }</p>
+        
         
         
       </div>
@@ -112,4 +114,4 @@ export const createCourseDetails = (course:Course) => {
     
   return details;
 };
- 
+// <p> Student ordered this course: ${course.users[0].firstName } ${course.users[0].lastName }</p>

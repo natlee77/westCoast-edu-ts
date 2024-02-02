@@ -10,29 +10,28 @@ export const createCard = (course) => {
 const createCourseCard = (course) => {
     const div = document.createElement('div');
     div.classList.add('course-image');
-    // div.appendChild(createImage(course.imageUrl, course.id));
+     div.appendChild(createImage(course.imageUrl, course.id));
     div.appendChild(createCourseInfo(course));
     return div;
 };
 // courses list desing in administration
-const createCoursesList = (courses, element) => {
-    courses.forEach(course => {
-        const container = createDiv();
-        // container.setAttribute('kursId',course.id);
-        container.appendChild(createSpan(course.title));
-        container.appendChild(createSpan(course.type));
-        container.appendChild(createSpan(`Start: ${course.start}`));
-        container.appendChild(createSpan(`Lenght: ${course.days} dags `));
-        element.appendChild(container);
-    });
+export const createCoursesList = (course) => {
+    const container = createDiv();
+    container.setAttribute('kursId',course.id);
+    container.appendChild(createSpan(course.title, 'title'));
+    container.appendChild(createSpan(course.type, 'type'));
+    container.appendChild(createSpan(`Start: ${course.start}`, 'start'));
+    container.appendChild(createSpan(`Lenght: ${course.days} days `, 'days'));
+    return container;
 };
 export const createDiv = () => {
     return document.createElement('div');
     ;
 };
-export const createSpan = (text) => {
+export const createSpan = (text, cl) => {
     const span = document.createElement('span');
     span.innerText = text;
+    span.classList.add(cl);
     return span;
 };
 const createImage = (imageUrl, id) => {
@@ -84,10 +83,11 @@ export const createCourseDetails = (course) => {
          </div>
           
          </form>
-        <p> Student ordered this course: ${course.users[0].firstName} ${course.users[0].lastName}</p>
+        
         
         
       </div>
     `;
     return details;
 };
+// <p> Student ordered this course: ${course.users[0].firstName } ${course.users[0].lastName }</p>

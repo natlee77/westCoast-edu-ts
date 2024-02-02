@@ -1,8 +1,8 @@
-  import { Course } from '../models/CourseType';
-  import { ResponseModel } from '../models/ResponseModel.js';
+  import { Course, CourseUser } from '../models/CourseType';
+   
   import { fetchData } from '../utilities/http.js';
 
-export async function getCourse(id: number): Promise<Course> {
+export async function getCourse(id: number): Promise<CourseUser> {
   const result = await fetchData('courses/' + id);
-  return result as unknown as Course;
+  return result as unknown as CourseUser;
 }

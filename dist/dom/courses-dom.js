@@ -1,6 +1,8 @@
-import { listAllCourses, addImageClickHandler } from '../services/courses.js';
+import { listAllCourses, addImageClickHandler, searchCourse } from '../services/courses.js';
 import { createCard } from '../forms/html-courses.js';
 const gallery = document.querySelector('#courses-gallery');
+document.querySelector('#searchForm')
+    .addEventListener('submit', onSearch);
 async function initPage() {
     listCourses();
     // Hämta in alla bilder 
@@ -9,9 +11,21 @@ async function initPage() {
     addImageClickHandler(images);
 }
 async function listCourses() {
-    const res = await listAllCourses();
-    console.log('list', res);
-    displayCourses(res);
+    let result;
+    //search
+    let query = document.querySelector('#searchInput').value;
+    if (query) {
+        result = await searchCourse(query);
+        console.log('query:', result);
+    }
+    else {
+        result = await listAllCourses();
+    }
+    displayCourses(result);
+}
+async function onSearch(e) {
+    e.preventDefault();
+    listCourses();
 }
 function displayCourses(courses) {
     gallery.innerHTML = "";
@@ -20,3 +34,4 @@ function displayCourses(courses) {
     }
 }
 document.addEventListener('DOMContentLoaded', initPage);
+export { listCourses };

@@ -17,7 +17,9 @@ export const addImageClickHandler = (images) => {
         });
     });
 };
-// export async function searchCourse( criteria: string) : Promise<ResponseModel>{
-//     const result = await fetchData('/courses',criteria)  ;
-//     return result;
-// }
+//http://localhost:3000/courses?title_like=it
+export async function searchCourse(criteria) {
+    const result = await fetchData('/courses?title_like=', criteria);
+    console.log('cr', criteria);
+    return result;
+}

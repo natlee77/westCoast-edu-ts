@@ -1,8 +1,8 @@
-import { UserType } from "../models/UserType";
+import { User } from "../models/UserType";
 import { createDiv,createSpan } from "./html-courses.js";
 
 //create Users list i Admin/users
-export const createUsersList = (user : UserType)=>{     
+export const createUsersList = (user : User)=>{     
     const container= createDiv();
     // container.setAttribute('userId',user.id);
     container.appendChild(createSpan(`Student :  ${user.firstName} ${user.lastName} *`));

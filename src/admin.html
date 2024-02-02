@@ -12,9 +12,9 @@
     <script
       src="https://kit.fontawesome.com/55174c58a9.js"
       crossorigin="anonymous"></script>
-    <!-- <script
+      <script
       type="module"
-      src="../dist/dom/admin-list.js"></script>  -->
+      src="../dist/dom/admin-dom.js"></script>   
     <title>Administration</title> 
   </head>
   <body class="grid-container">
@@ -59,6 +59,14 @@
       <div class="container">
         <h1 class="page-title">Administration</h1>
         <h2 class="page-sub-title">Actual courses</h2>
+        <section   class="container">
+          <form id="searchForm" method="post">
+          <div class="search">
+            <input type="text" name="searchInput" id="searchInput" placeholder="Sök...">
+            <i class="fa-regular fa-magnifying-glass" aria-hidden="true"></i>
+          </div>
+        </form>
+         </section>
         <section id="courses-list"></section>
       </div>
     </main>

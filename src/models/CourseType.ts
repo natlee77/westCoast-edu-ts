@@ -1,43 +1,36 @@
-export interface CourseType {
+export interface Course {
   id: number;
   title: string;
   imageUrl: string;
   type: string;
-  number:string;
+  number: string;
   days: number;
   price: number;
   rating: number;
   description: string;
-  users : [
+  start: string;
+}
+
+export interface CourseUser extends Course {
+  users: [
     {
       id: number;
-      firstName : string;
-      lastName : string;
-      telephone : string;
-      street : string;
-      postIndex : number;
+      firstName: string;
+      lastName: string;
+      telephone: string;
+      street: string;
+      postIndex: number;
       city: string;
       email: string;
-      start:string;
+      start: string;
+
     }
   ];
 }
- 
-export interface Course extends CourseType{
-   
-  title: string;
-  imageUrl: string;
-  type: string;
-  number:string;
-  days: number;
-  price: number;
-  start: string;
-  
-}
- 
- 
- 
- 
- 
- 
- 
+
+
+
+
+
+
+
