@@ -1,5 +1,5 @@
 import { Course } from '../models/CourseType.js';
-import { listAllCourses, addImageClickHandler, searchCourse } from '../services/courses.js';
+import { listAllCourses,searchCourse } from '../services/courses.js';
 import { createCard } from '../forms/html-courses.js';
 import { ResponseModel } from '../models/ResponseModel.js';
 
@@ -10,11 +10,7 @@ document.querySelector<HTMLFormElement>('#searchForm')!
         .addEventListener('submit', onSearch);
 
 async function initPage() {
-  listCourses();
-  // Hämta in alla bilder 
-  const images = document.querySelectorAll('.course-image img');
-  // knyt en klick händelse till varje bild..
-  addImageClickHandler(images);
+  listCourses();    
 }
 async function listCourses() {
   let result: ResponseModel;

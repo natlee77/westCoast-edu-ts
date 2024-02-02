@@ -8,7 +8,6 @@ export async function fetchData(endpoint, criteria) {
     //JavaScript
     if (criteria) {
         url = `${BASE_URL}${endpoint}${criteria} `;
-        console.log('url', url);
     }
     else {
         url = `${BASE_URL}${endpoint} `;
@@ -27,7 +26,7 @@ export async function fetchData(endpoint, criteria) {
         throw new Error(`Error in  get(): ${error}`);
     }
 }
-export async function addUser(user) {
+export async function addUserPOST(user) {
     try {
         await fetch("http://localhost:3000/users", {
             method: "POST",
@@ -35,6 +34,21 @@ export async function addUser(user) {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(user),
+        });
+    }
+    catch (error) {
+        throw new Error(`Error in add metod : ${error}`);
+    }
+}
+;
+export async function addCoursePOST(course) {
+    try {
+        await fetch("http://localhost:3000/courses", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(course),
         });
     }
     catch (error) {
@@ -69,13 +83,6 @@ export async function deleteCourse(course) {
         const response = await fetch(`http://localhost:3000/courses/${course.id}`, {
             method: 'DELETE',
         });
-        // if (response.ok) {
-        //    const result = await response.json();
-        //   // console.log(response);
-        //     return result;
-        // } else {
-        //   throw new Error(`${response.status} ${response.statusText}`);
-        // }
     }
     catch (error) {
         throw new Error(`Error in delete metod: ${error}`);

@@ -24,6 +24,7 @@ export const createCourse = () => {
 };
 export const createUserHTMLCard = () => {
     const form = document.querySelector('#newUserForm');
+    ;
     form.appendChild(creatediv('firstName'));
     form.appendChild(creatediv('lastName'));
     form.appendChild(creatediv('street'));
@@ -95,8 +96,8 @@ const createDesc = () => {
     const textarea = document.createElement("textarea");
     textarea.name = "description";
     textarea.id = "description";
-    textarea.cols = "30";
-    textarea.rows = "10";
+    textarea.cols = '30';
+    textarea.rows = '10';
     textarea.placeholder = 'course description';
     divDescription.appendChild(labelDescription);
     divDescription.appendChild(textarea);

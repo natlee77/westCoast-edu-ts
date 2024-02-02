@@ -6,45 +6,15 @@ export const createCard = (course) => {
     div.appendChild(createCourseInfo(course));
     return div;
 };
-//card for 1 course
-const createCourseCard = (course) => {
-    const div = document.createElement('div');
-    div.classList.add('course-image');
-     div.appendChild(createImage(course.imageUrl, course.id));
-    div.appendChild(createCourseInfo(course));
-    return div;
-};
+// //card for 1 course
+// const createCourseCard = (course: Course) => {
+//   const div = document.createElement('div');
+//   div.classList.add('course-image');
+//   // div.appendChild(createImage(course.imageUrl, course.id));
+//   div.appendChild(createCourseInfo(course));
+//   return div;
+// };
 // courses list desing in administration
-export const createCoursesList = (course) => {
-    const container = createDiv();
-    container.setAttribute('kursId',course.id);
-    container.appendChild(createSpan(course.title, 'title'));
-    container.appendChild(createSpan(course.type, 'type'));
-    container.appendChild(createSpan(`Start: ${course.start}`, 'start'));
-    container.appendChild(createSpan(`Lenght: ${course.days} days `, 'days'));
-    return container;
-};
-export const createDiv = () => {
-    return document.createElement('div');
-    ;
-};
-export const createSpan = (text, cl) => {
-    const span = document.createElement('span');
-    span.innerText = text;
-    span.classList.add(cl);
-    return span;
-};
-const createImage = (imageUrl, id) => {
-    const image = document.createElement('img');
-    image.setAttribute('src', `./assets/images/${imageUrl}`);
-    image.setAttribute('id', id.toString());
-    return image;
-};
-const createCourseInfo = (course) => {
-    const paragraph = document.createElement('p');
-    paragraph.appendChild(document.createTextNode(`${course.title} - ${course.type} - start ${course.start}`));
-    return paragraph;
-};
 export const createCourseDetails = (course) => {
     const details = document.createElement('div');
     details.innerHTML = `
@@ -52,9 +22,9 @@ export const createCourseDetails = (course) => {
       <div class="details-top">
         <section>
         <div>${course.imageUrl
-        ? `<img src=" ../content/images/${course.imageUrl} "
+        ? `<img src=" ../assets/images/${course.imageUrl} "
                  class="card-img-top" alt="${course.title}"/>`
-        : `<img src="../content/images/no-bild.jpg"
+        : `<img src="../assets/images/no-bild.jpg"
                 class="card-img-top" alt="${course.title}"/>`}
         </div>
         </section>
@@ -90,4 +60,27 @@ export const createCourseDetails = (course) => {
     `;
     return details;
 };
-// <p> Student ordered this course: ${course.users[0].firstName } ${course.users[0].lastName }</p>
+export const createDiv = () => {
+    return document.createElement('div');
+    ;
+};
+export const createSpan = (text, cl) => {
+    const span = document.createElement('span');
+    span.innerText = text;
+    span.classList.add(cl);
+    return span;
+};
+const createImage = (imageUrl, id) => {
+    const imageAnchor = document.createElement('a');
+    const image = document.createElement('img');
+    image.setAttribute('src', `./assets/images/${imageUrl}`);
+    imageAnchor.href = `./pages/course-details.html?id=${id}`;
+    image.setAttribute('id', id.toString());
+    imageAnchor.appendChild(image);
+    return imageAnchor;
+};
+const createCourseInfo = (course) => {
+    const paragraph = document.createElement('p');
+    paragraph.appendChild(document.createTextNode(`${course.title} - ${course.type} - start ${course.start}`));
+    return paragraph;
+};

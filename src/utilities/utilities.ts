@@ -1,7 +1,9 @@
-export const convertFormDataToJson = (formData) => {
-  const data = Object.fromEntries(formData.entries());
- 
+import { User } from "../models/UserType";
 
+export const convertFormDataToJson = (formData: any[] | FormData ) => {
+  const data = Object.fromEntries(formData.entries());
+  console.log('json',data);
+  
   return data;
 };
 export const getAllUsers = async () => {
@@ -24,8 +26,8 @@ export const getAllUsers = async () => {
 //______________Local Storage
 
 // add to Local Storage
-export const addToLocalStorage = (user) => {
-  const users = getFromLocalStorage();
+export const addToLocalStorage = (user:string ) => {
+  const users   = getFromLocalStorage();
   users.push(user);
   //setItem som tar 2 argument key:value
   localStorage.setItem('westcoast users', JSON.stringify(users));
@@ -38,7 +40,7 @@ export const getFromLocalStorage = () => {
   if (localStorage.getItem('westcoast users') === null) {
       users = [];
   } else {
-     users = JSON.parse(localStorage.getItem('westcoast users'));
+    //  users = JSON.parse(localStorage.getItem('westcoast users'));
   }
   
   

@@ -1,5 +1,5 @@
  export const editCourse = () => {
-     const form = document.querySelector('#editCourseForm');
+     const form = document.querySelector('#editCourseForm') as HTMLElement;
 
      form.appendChild(creatediv('title'));
      form.appendChild(creatediv('number'));
@@ -13,7 +13,7 @@
      return form;
  };
  export const createCourse = () => {
-     const form = document.querySelector('#addCourseForm');
+     const form = document.querySelector('#addCourseForm') as HTMLElement;
      form.appendChild(creatediv('title'));
      form.appendChild(creatediv('number'));
      form.appendChild(creatediv('days'));
@@ -27,7 +27,7 @@
  }
 
  export const createUserHTMLCard = () => {
-     const form = document.querySelector('#newUserForm');
+     const form = document.querySelector('#newUserForm')as HTMLElement;;
      form.appendChild(creatediv('firstName'));
      form.appendChild(creatediv('lastName'));    
      form.appendChild(creatediv('street'));
@@ -45,7 +45,7 @@
      form.appendChild(createBtn('Registrate  '));
      return form;
  }
- const createBtn = (text) => {
+ const createBtn = (text:string) => {
      const divbtn = document.createElement("div");
      divbtn.classList.add('form-control');
      const btn = document.createElement('button');
@@ -57,7 +57,7 @@
 
      return divbtn;
  }
- const creatediv = (text) => {
+ const creatediv = (text:string) => {
      const div = document.createElement('div');
      div.classList.add('form-control');
      const label = document.createElement('label');
@@ -105,8 +105,8 @@
      const textarea = document.createElement("textarea");
      textarea.name = "description";
      textarea.id = "description";
-     textarea.cols = "30";
-     textarea.rows = "10";
+     textarea.cols = '30';
+     textarea.rows = '10';
      textarea.placeholder = 'course description';
      divDescription.appendChild(labelDescription);
      divDescription.appendChild(textarea);

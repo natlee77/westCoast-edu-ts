@@ -13,7 +13,7 @@ export async function fetchData(endpoint: string, criteria?: string): Promise<Re
   //JavaScript
   if (criteria) {
     url = `${BASE_URL}${endpoint}${criteria} `;
-    console.log('url', url);
+     
   } else {
     url = `${BASE_URL}${endpoint} `;
   }
@@ -32,7 +32,7 @@ export async function fetchData(endpoint: string, criteria?: string): Promise<Re
 
 
  
- export async function  addUser  (user: User): Promise<void>  {
+ export async function  addUserPOST  (user: User): Promise<void>  {
   try {
    await fetch("http://localhost:3000/users", {
       method: "POST",
@@ -40,6 +40,20 @@ export async function fetchData(endpoint: string, criteria?: string): Promise<Re
           "Content-Type": "application/json",
       },
       body: JSON.stringify(user),
+  });
+}catch(error) {
+    throw new Error(`Error in add metod : ${error}`);
+  
+}
+};
+export async function  addCoursePOST  (course: Course): Promise<void>  {
+  try {
+   await fetch("http://localhost:3000/courses", {
+      method: "POST",
+      headers: {
+          "Content-Type": "application/json",
+      },
+      body: JSON.stringify(course),
   });
 }catch(error) {
     throw new Error(`Error in add metod : ${error}`);
@@ -70,18 +84,12 @@ export async function updateCourse(course:Course ) {
     }
   }
 
-  export async function  deleteCourse(course:Course) {
+export async function  deleteCourse(course:Course) {
     try {
       const response = await fetch (`http://localhost:3000/courses/${course.id}`, {
         method: 'DELETE',
       });
-      // if (response.ok) {
-      //    const result = await response.json();
-      //   // console.log(response);
-      //     return result;
-      // } else {
-      //   throw new Error(`${response.status} ${response.statusText}`);
-      // }
+       
     } catch (error) {
       throw new Error(`Error in delete metod: ${error}`);
     }
@@ -89,8 +97,6 @@ export async function updateCourse(course:Course ) {
 
 
 export const patchCourseUser = async (user: User, course: CourseUser): Promise<void> => {
-   
-
   const res = await fetch(`http://localhost:3000/courses/${course.id}`, {
     method: "PATCH",
     headers: {

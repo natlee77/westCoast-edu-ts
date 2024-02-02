@@ -10,7 +10,7 @@
       "rating": 4.8,
       "start": "2024-05-02",
       "description": "test",
-      "users": [
+      "usersBok": [
         {
           "id": 1,
           "firstName": "Merry",
@@ -36,7 +36,7 @@
       "start": "2024-02-02",
       "isAktive": false,
       "description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam commodo venenatis rhoncus. VivamusvehicleId lacusvehicleId elit tristique vulputate.",
-      "users": [
+      "usersBok": [
         {
           "firstName": "Nataliya",
           "lastName": "Lisjö",
@@ -73,7 +73,7 @@
       "start": "2024-22-01",
       "isAktive": false,
       "description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam commodo venenatis rhoncus. VivamusvehicleId lacusvehicleId elit tristique vulputate. ",
-      "users": [
+      "usersBok": [
         {
           "firstName": "Nataliya",
           "lastName": "Lisjö",
@@ -110,7 +110,7 @@
       "start": "2024-22-01",
       "isAktive": false,
       "description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam commodo venenatis rhoncus. VivamusvehicleId lacusvehicleId elit tristique vulputate. ",
-      "users": [
+      "usersBok": [
         {
           "firstName": "Nataliya",
           "lastName": "Lisjö",
@@ -136,7 +136,7 @@
       "start": "2024-22-01",
       "isAktive": false,
       "description": "The modern JavaScript course for everyone! Master JavaScript with projects, challenges and theory. Many courses in one!",
-      "users": [],
+      "usersBok": [],
       "id": 5
     },
     {
@@ -150,7 +150,7 @@
       "start": "2024-22-01",
       "isAktive": false,
       "description": "The modern JavaScript  course for everyone! Master JavaScript with projects, challenges and theory. Many courses in one!",
-      "users": [],
+      "usersBok": [],
       "id": 6
     },
     {
@@ -173,7 +173,7 @@
       "type": "classroom",
       "imageUrl": "no-bild.jpg",
       "description": "trytrfsysr",
-      "users": []
+      "usersBok": []
     },
     {
       "title": "test versioner",
@@ -183,7 +183,8 @@
       "type": "classroom",
       "imageUrl": "no-bild.jpg",
       "description": "mmmmmmm",
-      "id": 10
+      "id": 10,
+      "usersBok": []
     },
     {
       "title": "tttttttttt",
@@ -193,7 +194,28 @@
       "type": "distance",
       "imageUrl": "no-bild.jpg",
       "description": "gfhfh",
-      "id": 11
+      "id": 11,
+      "usersBok": []
+    },
+    {
+      "title": "typescript",
+      "number": "safd3e3",
+      "days": "55",
+      "price": "7500",
+      "type": "classroom",
+      "imageUrl": "no-bild.jpg",
+      "description": "dsf dfs dfg juyh k",
+      "id": 12
+    },
+    {
+      "title": "",
+      "number": "",
+      "days": "",
+      "price": "",
+      "type": "distance",
+      "imageUrl": "no-bild.jpg",
+      "description": "",
+      "id": 13
     }
   ],
   "users": [

@@ -1,12 +1,9 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.getFromLocalStorage = exports.addToLocalStorage = exports.getAllUsers = exports.convertFormDataToJson = void 0;
-const convertFormDataToJson = (formData) => {
+export const convertFormDataToJson = (formData) => {
     const data = Object.fromEntries(formData.entries());
+    console.log('json', data);
     return data;
 };
-exports.convertFormDataToJson = convertFormDataToJson;
-const getAllUsers = async () => {
+export const getAllUsers = async () => {
     try {
         const url = 'http://localhost:3000/users';
         const response = await fetch(url);
@@ -22,25 +19,22 @@ const getAllUsers = async () => {
         console.log(error);
     }
 };
-exports.getAllUsers = getAllUsers;
 //______________Local Storage
 // add to Local Storage
-const addToLocalStorage = (user) => {
-    const users = (0, exports.getFromLocalStorage)();
+export const addToLocalStorage = (user) => {
+    const users = getFromLocalStorage();
     users.push(user);
     //setItem som tar 2 argument key:value
     localStorage.setItem('westcoast users', JSON.stringify(users));
 };
-exports.addToLocalStorage = addToLocalStorage;
 // get from Local Storage
-const getFromLocalStorage = () => {
+export const getFromLocalStorage = () => {
     let users;
     if (localStorage.getItem('westcoast users') === null) {
         users = [];
     }
     else {
-        users = JSON.parse(localStorage.getItem('westcoast users'));
+        //  users = JSON.parse(localStorage.getItem('westcoast users'));
     }
     return users;
 };
-exports.getFromLocalStorage = getFromLocalStorage;

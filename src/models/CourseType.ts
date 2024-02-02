@@ -12,7 +12,7 @@ export interface Course {
 }
 
 export interface CourseUser extends Course {
-  users: [
+  usersBok: [
     {
       id: number;
       firstName: string;

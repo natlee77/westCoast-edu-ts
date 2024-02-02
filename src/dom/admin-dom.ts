@@ -1,25 +1,20 @@
 import { Course } from "../models/CourseType.js";
 import { ResponseModel } from "../models/ResponseModel.js";
 import { listAllCourses, searchCourse } from "../services/courses.js";
-import { createCoursesList } from "../forms/html-courses.js";
+import {   createDiv, createSpan } from "../forms/html-courses.js";
 
 const coursesList = document.getElementById('courses-list') as HTMLDivElement;
+ const cardsList = document.querySelectorAll('#courses-list div')  ; 
 
 document.querySelector<HTMLFormElement>('#searchForm')!
         .addEventListener('submit', onSearch);
 
 const initPage = async() => {    
-    listCourses();
-
-    //add click event in list
-   const cardsList=document.querySelectorAll('#courses-list div '); 
-   cardsList.forEach(card=>{
-       card.addEventListener('click',selectedCard)
-   })
+   await listCourses();
+   
 }
 async function listCourses() {
     let result: ResponseModel;
-
     //search
     let query: string =
          document.querySelector<HTMLInputElement>('#searchInput')!.value; 
@@ -28,7 +23,8 @@ async function listCourses() {
     } else {
       result = await listAllCourses();
     }   
-    displayCourses(result as unknown as [Course]);
+   displayCourses(result as unknown as [Course]) ;
+   ;
   }
   async function onSearch(e: SubmitEvent): Promise<void> {
     e.preventDefault();
@@ -36,28 +32,38 @@ async function listCourses() {
   }
 
   function displayCourses(courses: [Course]) {
-    coursesList.innerHTML = "";
+    coursesList.innerHTML = "";   
     for (let course of courses) {
-         coursesList.appendChild(createCoursesList(course));
+         coursesList.appendChild(createCourseList(course));    
     }
   }
-  const selectedCard = (event:any)=>{
-    let kursId = 0;
-    //target- localName  === div||span
-     console.log(event.target.localName);
+ 
+const addClickHandler = (element: HTMLElement): void => {
+  element.addEventListener('click', () => {
+      const courseId = element.getAttribute('kursid');
+      if (courseId) {
+          console.log(courseId);
+          location.href = `./pages/edit-course.html?id=${courseId}`;
+      }
+  });
+};
+  const createCourseList = (course: Course) => {
 
-    if (event.target.localName === 'div'){
-        kursId = event.target.getAttribute('kursId');
-        
-    }else if (event.target.localName === 'span'){
-        kursId = event.target.parentElement.getAttribute('kursId');
-       
-    }
-     //redirect => to edit.html
-     location.href = `./edit-course.html?id=${kursId}`;
-}
+  const container:HTMLElement= createDiv();
+  const imageAnchor = document.createElement('a');
+  container.appendChild(imageAnchor);  
+  imageAnchor.href = `../pages/edit-course.html?id=${course.id}`;
+  container.setAttribute('kursId',  course.id);
+  container.appendChild(createSpan(course.title, 'title')).style.fontWeight = 'bold'; ;
 
+  container.appendChild(createSpan(course.type, 'type'));
+  container.appendChild(createSpan(`Start: ${course.start}`, 'start'));
+  container.appendChild(createSpan(`Lenght: ${course.days} days `, 'days'));
 
+  addClickHandler (container) ;
+  return container;
+
+};
 
 document.addEventListener("DOMContentLoaded",initPage);
  
