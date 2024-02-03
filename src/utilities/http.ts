@@ -29,8 +29,6 @@ export async function fetchData(endpoint: string, criteria?: string): Promise<Re
     throw new Error(`Error in  get(): ${error}`);
   }
 }
-
-
  
  export async function  addUserPOST  (user: User): Promise<void>  {
   try {
@@ -61,16 +59,14 @@ export async function  addCoursePOST  (course: Course): Promise<void>  {
 }
 };
   
-
-
-export async function updateCourse(course:Course ) {
+export async function updateCoursePUT(data:any,id:any ) {
     try {       
-      const response = await fetch(`http://localhost:3000/courses/${course.id}`, {
+      const response = await fetch(`http://localhost:3000/courses/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(course),
+        body: JSON.stringify(data),
       });
       if (response.ok) {
           const result = await response.json();
@@ -83,10 +79,10 @@ export async function updateCourse(course:Course ) {
       throw new Error(`Error in update metod: ${error}`);
     }
   }
-
-export async function  deleteCourse(course:Course) {
+ 
+export async function  deleteCourseMethod( id:any) {
     try {
-      const response = await fetch (`http://localhost:3000/courses/${course.id}`, {
+      const response = await fetch (`http://localhost:3000/courses/${id}`, {
         method: 'DELETE',
       });
        

@@ -4,11 +4,13 @@
      form.appendChild(creatediv('title'));
      form.appendChild(creatediv('number'));
      form.appendChild(creatediv('days'));
+     form.appendChild(creatediv('start'));
+     form.appendChild(creatediv('rating'));
      form.appendChild(creatediv('price'));
      form.appendChild(creatediv('type'));
      form.appendChild(createImg());
      form.appendChild(createDesc());
-     form.appendChild(createBtn('Update'));
+     form.appendChild(createBtn('Update'))    ;
 
      return form;
  };
@@ -17,6 +19,8 @@
      form.appendChild(creatediv('title'));
      form.appendChild(creatediv('number'));
      form.appendChild(creatediv('days'));
+     form.appendChild(creatediv('start'));
+     form.appendChild(creatediv('rating'));
      form.appendChild(creatediv('price'));
      form.appendChild(creatediv('type'));
      form.appendChild(createImg());
@@ -48,7 +52,7 @@
  const createBtn = (text:string) => {
      const divbtn = document.createElement("div");
      divbtn.classList.add('form-control');
-     const btn = document.createElement('button');
+     const btn = document.createElement('button') as HTMLButtonElement;
      btn.classList.add('btn');
      btn.type = "submit";
      btn.textContent = text;
@@ -58,7 +62,7 @@
      return divbtn;
  }
  const creatediv = (text:string) => {
-     const div = document.createElement('div');
+     const div = document.createElement('div') as HTMLDivElement;
      div.classList.add('form-control');
      const label = document.createElement('label');
      label.htmlFor = text;
@@ -102,7 +106,7 @@
      const labelDescription = document.createElement("label");
      labelDescription.htmlFor = 'description';
      labelDescription.textContent = "Description";
-     const textarea = document.createElement("textarea");
+     const textarea = document.createElement("textarea") as HTMLTextAreaElement;
      textarea.name = "description";
      textarea.id = "description";
      textarea.cols = '30';

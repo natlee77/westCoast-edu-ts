@@ -1,5 +1,7 @@
 import { editCourse } from '../forms/html-forms.js';
 import { getCourse } from "../services/course-detail.js";
+import { updateCoursePUT, deleteCourseMethod } from '../utilities/http.js';
+import { convertFormDataToJson } from '../utilities/utilities.js';
 const editcard = document.querySelector('#contact-form');
 const form = document.querySelector('#editCourseForm');
 const deletebtn = document.querySelector('#delete');
@@ -12,41 +14,35 @@ async function init() {
 ;
 const getById = async (id) => {
     const course = await getCourse(id);
-    // console.log('c', course);
     //id editCourseForm
     loadDataToForm(course);
 };
-// URLSearchParams()-generate query parameters(string)
 const loadDataToForm = (course) => {
-    console.log('form-elements', form.elements);
-    const entries = new URLSearchParams(course).entries();
-    console.log('entries', ...entries);
-    for (let [key, value] of entries) {
-        if (key !== 'id') {
-            const inne = form.elements[key];
-            inne.value = value;
-            console.log(key);
-            // console.log(value);
-        }
-    }
+    const formElements = form.elements;
+    formElements["title"].value = course.title;
+    formElements["number"].value = course.number;
+    formElements["days"].value = course.days;
+    formElements["start"].value = course.start;
+    formElements["rating"].value = course.rating;
+    formElements["price"].value = course.price;
+    formElements["type"].value = course.type;
+    formElements["imageUrl"].value = course.imageUrl;
+    formElements["description"].value = course.description;
 };
 const updateCourse = async (e) => {
     e.preventDefault();
-    //     const course = new FormData(form);  
-    //     const obj = convertFormDataToJson(course);  
-    //     const url = `http://localhost:3000/courses/${kursid}`;
-    //     const http = new HttpClient(url);  
-    //     await http.update(obj);
+    const updatecourse = new FormData(form);
+    const obj = convertFormDataToJson(updatecourse);
+    await updateCoursePUT(obj, courseId);
     //     //redirect  
-    //      location.href = './admin.html';
+    location.href = '../admin.html';
 };
 const deleteCourse = async () => {
-    //     const url = `http://localhost:3000/courses/${kursid}`;
-    //     const http = new HttpClient(url);
-    //     await http.delete( );
+    await deleteCourseMethod(courseId);
     //     //redirect  
-    //     location.href = './admin.html';
+    location.href = '../admin.html';
 };
+const courseId = new URLSearchParams(window.location.search).get("id");
 document.addEventListener('DOMContentLoaded', init);
 form.addEventListener('submit', updateCourse);
 deletebtn.addEventListener('click', deleteCourse);

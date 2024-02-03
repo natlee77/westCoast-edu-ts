@@ -3,6 +3,8 @@ export const editCourse = () => {
     form.appendChild(creatediv('title'));
     form.appendChild(creatediv('number'));
     form.appendChild(creatediv('days'));
+    form.appendChild(creatediv('start'));
+    form.appendChild(creatediv('rating'));
     form.appendChild(creatediv('price'));
     form.appendChild(creatediv('type'));
     form.appendChild(createImg());
@@ -15,6 +17,8 @@ export const createCourse = () => {
     form.appendChild(creatediv('title'));
     form.appendChild(creatediv('number'));
     form.appendChild(creatediv('days'));
+    form.appendChild(creatediv('start'));
+    form.appendChild(creatediv('rating'));
     form.appendChild(creatediv('price'));
     form.appendChild(creatediv('type'));
     form.appendChild(createImg());

@@ -187,35 +187,28 @@
       "usersBok": []
     },
     {
-      "title": "tttttttttt",
+      "title": "testing typescript update course",
       "number": "JGH",
       "days": "5",
+      "start": "12-03-2024",
+      "rating": "5",
       "price": "1233",
       "type": "distance",
       "imageUrl": "no-bild.jpg",
       "description": "gfhfh",
-      "id": 11,
-      "usersBok": []
+      "id": 11
     },
     {
       "title": "typescript",
       "number": "safd3e3",
       "days": "55",
+      "start": "12-03-2024",
+      "rating": "4.8",
       "price": "7500",
       "type": "classroom",
       "imageUrl": "no-bild.jpg",
       "description": "dsf dfs dfg juyh k",
       "id": 12
-    },
-    {
-      "title": "",
-      "number": "",
-      "days": "",
-      "price": "",
-      "type": "distance",
-      "imageUrl": "no-bild.jpg",
-      "description": "",
-      "id": 13
     }
   ],
   "users": [

@@ -6,7 +6,8 @@ export const convertFormDataToJson = (formData: any[] | FormData ) => {
   
   return data;
 };
-export const getAllUsers = async () => {
+export async function getAllUsers ( )  { 
+ 
   try {
       const url = 'http://localhost:3000/users';
 
@@ -26,7 +27,7 @@ export const getAllUsers = async () => {
 //______________Local Storage
 
 // add to Local Storage
-export const addToLocalStorage = (user:string ) => {
+export const addToLocalStorage = (user:any ) => {
   const users   = getFromLocalStorage();
   users.push(user);
   //setItem som tar 2 argument key:value

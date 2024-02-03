@@ -56,14 +56,14 @@ export async function addCoursePOST(course) {
     }
 }
 ;
-export async function updateCourse(course) {
+export async function updateCoursePUT(data, id) {
     try {
-        const response = await fetch(`http://localhost:3000/courses/${course.id}`, {
+        const response = await fetch(`http://localhost:3000/courses/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(course),
+            body: JSON.stringify(data),
         });
         if (response.ok) {
             const result = await response.json();
@@ -78,9 +78,9 @@ export async function updateCourse(course) {
         throw new Error(`Error in update metod: ${error}`);
     }
 }
-export async function deleteCourse(course) {
+export async function deleteCourseMethod(id) {
     try {
-        const response = await fetch(`http://localhost:3000/courses/${course.id}`, {
+        const response = await fetch(`http://localhost:3000/courses/${id}`, {
             method: 'DELETE',
         });
     }

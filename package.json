@@ -14,5 +14,13 @@
   "description": "Öppna upp   \"Terminal\" fönstret i VSCode och skriv in följande kommando: #### typescript  `npm install typescript -D` `npx tsc --init` `npm run dev` ####  json-server.   `npm install`    `json-server --watch  db.json`",
   "dependencies": {
     "json-server": "^0.17.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/natlee77/westCoast-edu-ts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/natlee77/westCoast-edu-ts/issues"
+  },
+  "homepage": "https://github.com/natlee77/westCoast-edu-ts#readme"
 }
