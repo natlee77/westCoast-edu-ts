@@ -19,7 +19,7 @@ function addCourse(e: any) {
   saveCourse(obj);
 }
 
-async function saveCourse(course: Course) {   
+async function saveCourse(course: any) {   
      addCoursePOST(course);
   //   // redirect
      location.href = '../admin.html'

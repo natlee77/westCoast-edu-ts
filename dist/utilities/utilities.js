@@ -30,12 +30,12 @@ export const addToLocalStorage = (user) => {
 };
 // get from Local Storage
 export const getFromLocalStorage = () => {
-    let users;
+    let users = [];
     if (localStorage.getItem('westcoast users') === null) {
         users = [];
     }
     else {
-        //  users = JSON.parse(localStorage.getItem('westcoast users'));
+        users = JSON.parse(localStorage.getItem('westcoast users') || '{}');
     }
     return users;
 };
