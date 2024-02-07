@@ -10,7 +10,7 @@
       "rating": 4.8,
       "start": "2024-05-02",
       "description": "test",
-      "usersBok": [
+      "students": [
         {
           "id": 1,
           "firstName": "Merry",
@@ -36,7 +36,7 @@
       "start": "2024-02-02",
       "isAktive": false,
       "description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam commodo venenatis rhoncus. VivamusvehicleId lacusvehicleId elit tristique vulputate.",
-      "usersBok": [
+      "students": [
         {
           "firstName": "Nataliya",
           "lastName": "Lisjö",
@@ -73,7 +73,7 @@
       "start": "2024-22-01",
       "isAktive": false,
       "description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam commodo venenatis rhoncus. VivamusvehicleId lacusvehicleId elit tristique vulputate. ",
-      "usersBok": [
+      "students": [
         {
           "firstName": "Nataliya",
           "lastName": "Lisjö",
@@ -110,7 +110,7 @@
       "start": "2024-22-01",
       "isAktive": false,
       "description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam commodo venenatis rhoncus. VivamusvehicleId lacusvehicleId elit tristique vulputate. ",
-      "usersBok": [
+      "students": [
         {
           "firstName": "Nataliya",
           "lastName": "Lisjö",
@@ -136,7 +136,7 @@
       "start": "2024-22-01",
       "isAktive": false,
       "description": "The modern JavaScript course for everyone! Master JavaScript with projects, challenges and theory. Many courses in one!",
-      "usersBok": [],
+      "students": [],
       "id": 5
     },
     {
@@ -150,7 +150,7 @@
       "start": "2024-22-01",
       "isAktive": false,
       "description": "The modern JavaScript  course for everyone! Master JavaScript with projects, challenges and theory. Many courses in one!",
-      "usersBok": [],
+      "students": [],
       "id": 6
     },
     {
@@ -173,7 +173,7 @@
       "type": "classroom",
       "imageUrl": "no-bild.jpg",
       "description": "trytrfsysr",
-      "usersBok": []
+      "students": []
     },
     {
       "title": "test versioner",
@@ -184,7 +184,17 @@
       "imageUrl": "no-bild.jpg",
       "description": "mmmmmmm",
       "id": 10,
-      "usersBok": []
+      "students": {
+        "firstName": "Vasilisa",
+        "lastName": "Berns",
+        "street": "JUMEIRAH BEACH  ",
+        "postIndex": "11111",
+        "city": "JUMEIRAH  ",
+        "telephone": "01111111111",
+        "email": "BEACH-RESORT@gmail.com",
+        "password": "admin",
+        "id": 5
+      }
     },
     {
       "title": "testing typescript update course",
@@ -196,7 +206,18 @@
       "type": "distance",
       "imageUrl": "no-bild.jpg",
       "description": "gfhfh",
-      "id": 11
+      "id": 11,
+      "students": {
+        "firstName": "Vasilisa",
+        "lastName": "Berns",
+        "street": "JUMEIRAH BEACH  ",
+        "postIndex": "11111",
+        "city": "JUMEIRAH  ",
+        "telephone": "01111111111",
+        "email": "BEACH-RESORT@gmail.com",
+        "password": "admin",
+        "id": 5
+      }
     },
     {
       "title": "typescript",
@@ -208,7 +229,18 @@
       "type": "classroom",
       "imageUrl": "no-bild.jpg",
       "description": "dsf dfs dfg juyh k",
-      "id": 12
+      "id": 12,
+      "students": [{
+        "firstName": "Vasilisa",
+        "lastName": "Berns",
+        "street": "JUMEIRAH BEACH  ",
+        "postIndex": "11111",
+        "city": "JUMEIRAH  ",
+        "telephone": "01111111111",
+        "email": "BEACH-RESORT@gmail.com",
+        "password": "admin",
+        "id": 5
+      }]
     }
   ],
   "users": [

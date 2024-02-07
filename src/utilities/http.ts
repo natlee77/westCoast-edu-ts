@@ -1,7 +1,7 @@
 import { state } from './config.js'
 import { ResponseModel } from '../models/ResponseModel.js';
 import { User } from '../models/UserType.js';
-import { Course, CourseUser } from '../models/CourseType.js';
+import { Course, Students } from '../models/CourseType.js';
 
 
 export async function fetchData(endpoint: string, criteria?: string): Promise<ResponseModel> {
@@ -92,14 +92,15 @@ export async function  deleteCourseMethod( id:any) {
   }
 
 
-export const patchCourseUser = async (user: User, course: CourseUser): Promise<void> => {
+export const patchCourseUser = async (user: User, course: Students): Promise<void> => {
+   
   const res = await fetch(`http://localhost:3000/courses/${course.id}`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ 
-       users  : user 
+      students : [user]
      }),// users: Array(user)
   });
 

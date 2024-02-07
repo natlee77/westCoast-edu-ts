@@ -2,7 +2,7 @@ import { createDiv, createSpan } from "./html-courses.js";
 //create Users list i Admin/users
 export const createUsersList = (user) => {
     const container = createDiv();
-    container.setAttribute('userId', user.id);
+    container.setAttribute('userId', ` ${user.id}`);
     container.appendChild(createSpan(`Student :  ${user.firstName} ${user.lastName}  `, 'name'));
     container.appendChild(createSpan(user.email, 'email'));
     container.appendChild(createSpan(` * tel:  ${user.telephone} `, 'telephone'));

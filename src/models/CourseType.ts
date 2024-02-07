@@ -1,4 +1,7 @@
+import {User} from "./UserType";
+
 export interface Course {
+  
   id: number;
   title: string;
   imageUrl: string;
@@ -11,21 +14,8 @@ export interface Course {
   start: string;
 }
 
-export interface CourseUser extends Course {
-  usersBok: [
-    {
-      id: number;
-      firstName: string;
-      lastName: string;
-      telephone: string;
-      street: string;
-      postIndex: number;
-      city: string;
-      email: string;
-      start: string;
-
-    }
-  ];
+export interface Students extends Course {
+  students: [User ];
 }
 
 

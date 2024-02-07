@@ -95,7 +95,7 @@ export const patchCourseUser = async (user, course) => {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            users: user
+            students: [user]
         }), // users: Array(user)
     });
     if (!res.ok) {

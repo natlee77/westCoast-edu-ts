@@ -27,10 +27,10 @@ const loadDataToForm = (course: Course) => {
   const formElements = form.elements as unknown as Record<string, HTMLInputElement>;
   formElements["title"].value = course.title;
   formElements["number"].value = course.number;
-  formElements["days"].value = course.days;
+  formElements["days"].value = course.days as unknown as string;
   formElements["start"].value = course.start;
-  formElements["rating"].value = course.rating;
-  formElements["price"].value = course.price;
+  formElements["rating"].value = course.rating as unknown as string;
+  formElements["price"].value = course.price as unknown as string;
   formElements["type"].value = course.type;
   formElements["imageUrl"].value = course.imageUrl;
   formElements["description"].value = course.description;

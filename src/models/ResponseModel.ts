@@ -1,8 +1,8 @@
-import {   CourseType } from './CourseType';
-import { UserType } from './UserType';
+import {   Course  } from './CourseType';
+import { User  } from './UserType';
 
 export interface ResponseModel {
-  courses: [CourseType ];
-  users: [UserType];
+  courses: [Course  ];
+  users: [User ];
 
 }

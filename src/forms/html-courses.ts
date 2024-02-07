@@ -1,4 +1,4 @@
-import { Course, CourseUser } from "../models/CourseType.js";
+import { Course,  Students } from "../models/CourseType.js";
 
 //Card for gallery display
 export const createCard = (course: Course) => {
@@ -23,7 +23,7 @@ export const createCard = (course: Course) => {
 // courses list desing in administration
 
 
-export const createCourseDetails = (course: CourseUser) => {
+export const createCourseDetails = (course: Students) => {
   const details = document.createElement('div');
 
   details.innerHTML = `

@@ -4,7 +4,7 @@ import { createDiv,createSpan } from "./html-courses.js";
 //create Users list i Admin/users
 export const createUsersList = (user : User)=>{     
     const container= createDiv();
-    container.setAttribute('userId', user.id);
+    container.setAttribute('userId', ` ${user.id}` );
     container.appendChild(createSpan(`Student :  ${user.firstName} ${user.lastName}  `,'name'));
     container.appendChild(createSpan( user.email,'email'));
     container.appendChild(createSpan( ` * tel:  ${user.telephone} `,'telephone'));
@@ -14,7 +14,7 @@ export const createUsersList = (user : User)=>{
     return container;
     } ;  
     
-    export const createStudentsDetails = (user:User ,element:any) => {
+    export const createStudentsDetails = (user:any ,element:any) => {
       
         const container= createDiv();    
         container.appendChild(createSpan(`Student :  ${user.firstName} ${user.lastName}` ,'student'));
